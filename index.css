@@ -139,6 +139,14 @@ main {
   margin-top: 8rem;
 }
 
+@media (max-width: 1240px) {
+  body > header,
+  .container,
+  main {
+    margin-top: 6rem;
+  }
+}
+
 /* nav styles */
 
 nav {
@@ -206,16 +214,13 @@ nav {
 
 input[type="text"],
 textarea {
-  /* Remove */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
-  /* Optional */
   border: none;
   box-shadow: none;
   color: inherit;
-  /*etc.*/
 }
 
 .search input:focus {
@@ -232,11 +237,25 @@ textarea {
 
 .ham-icon {
   padding: 8px;
-}
-
-.ham-icon:hover {
   background-color: rgb(21, 21, 21);
   border-radius: 4px;
+}
+
+@media (max-width: 1240px) {
+  .navigation {
+    display: none;
+  }
+  nav {
+    padding: 10px 20px;
+  }
+
+  .search input {
+    display: none;
+  }
+
+  .right-content {
+    gap: 0.5rem;
+  }
 }
 
 /* connect css */
@@ -247,6 +266,7 @@ textarea {
   height: 100vh;
   top: 12rem;
   right: 0;
+  z-index: 5;
 }
 
 .connect .logos {
@@ -262,18 +282,18 @@ textarea {
   background-color: rgba(36, 36, 36, 0.594);
   max-width: fit-content;
   padding: 0.75rem;
-  border-radius: 7px;
+  border-radius: 7px 0 0 7px;
   font-size: 1.2rem;
 }
 
 .logos .whatsapp {
-  background-color: #25D366;
+  background-color: #25d366;
 }
 .logos .discord {
   background-color: #7289d9;
 }
 .logos .reddit {
-  background-color: #FF5700	;
+  background-color: #ff5700;
 }
 
 /* header css */
@@ -310,6 +330,9 @@ textarea {
   width: 100%;
   height: 100%;
   resize: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
 }
 
 textarea:focus {
@@ -321,6 +344,23 @@ header textarea {
 }
 header textarea:hover {
   outline: none;
+}
+
+@media (max-width: 1240px) {
+  header {
+    padding: 0 3rem;
+    gap: 3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .image {
+    width: 80%;
+  }
+
+  header .text-area {
+    width: 100%;
+    aspect-ratio: 3/1;
+  }
 }
 
 /* stats container css */
@@ -341,11 +381,29 @@ header textarea:hover {
   border: 2px solid rgb(42, 42, 42);
   background-color: rgb(21, 21, 21);
   transition: all 0.2s ease-in-out;
+  text-align: center;
 }
 
 .box:hover {
-  border: 2px solid rgb(148, 148, 148);
   background-color: rgb(28, 28, 28);
+}
+
+.box.pass:hover {
+  border: 2px solid #a7d129;
+  color: #a7d129;
+}
+
+.box.que:hover {
+  border: 2px solid #ffe227;
+  color: #ffe227;
+}
+.box.ans:hover {
+  border: 2px solid #068fff;
+  color: #068fff;
+}
+.box.part:hover {
+  border: 2px solid #ff2626;
+  color: #ff2626;
 }
 
 .box h1 {
@@ -359,11 +417,23 @@ header textarea:hover {
   font-weight: 900;
 }
 
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 3rem;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
 /* main styles */
 
 main {
   display: flex;
-  background: linear-gradient( #9d4edd, #d699ff);
+  background: linear-gradient(#9d4edd, #d699ff);
   color: black;
   padding: 4rem 8rem;
   gap: 4rem;
@@ -372,7 +442,7 @@ main {
 .interact {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .interact button {
@@ -380,10 +450,9 @@ main {
   text-align: center;
   border-radius: 8px;
   border: none;
-  border: 2px solid #eecbff;
-  background-color: #d597ffa7;
+  background-color: #2a2a2a3c;
   color: rgb(255, 232, 254);
-  font-weight:600;
+  font-weight: 600;
   font-size: 1rem;
   box-sizing: border-box;
 }
@@ -391,7 +460,7 @@ main {
 button.is-active {
   background-color: #feaae5;
   color: #10002b;
-  border:none;
+  border: none;
 }
 
 .detail {
@@ -412,6 +481,44 @@ button.is-active {
 
 table td {
   padding: 0.5rem 1rem;
+}
+
+@media (max-width: 1240px) {
+  main {
+    padding: 2rem 3rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .interact {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .interact button {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .interact button {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .detail {
+    padding: 1rem;
+  }
+  .detail .info {
+    overflow-x:hidden;
+  }
 }
 
 /* contact styles */
