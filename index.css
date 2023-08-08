@@ -1,0 +1,365 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* above styles for removing dafault browser styles  */
+
+body {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+  color: rgb(228, 228, 228);
+  position: relative;
+}
+
+body > header,
+.container,
+main {
+  margin-top: 8rem;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: min-content;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  border-bottom: 2px solid rgb(37, 37, 37);
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.594);
+  backdrop-filter: blur(10px);
+}
+
+.left-content {
+  display: flex;
+  gap: 4rem;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navigation {
+  display: flex;
+  gap: 1.4rem;
+  color: rgb(169, 169, 169);
+  font-weight: 500;
+}
+
+.navigation h3:hover {
+  color: white;
+  cursor: pointer;
+}
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: rgb(21, 21, 21);
+}
+
+input[type="text"],
+textarea {
+  /* Remove */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Optional */
+  border: none;
+  box-shadow: none;
+  color: inherit;
+  /*etc.*/
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search input {
+  background-color: transparent;
+}
+
+.search .logo {
+  opacity: 50%;
+}
+
+.ham-icon {
+  padding: 8px;
+}
+
+.ham-icon:hover {
+  background-color: rgb(21, 21, 21);
+  border-radius: 4px;
+}
+
+/* header css */
+
+header {
+  display: flex;
+  gap: 6rem;
+  padding: 0 8rem;
+}
+
+header .image {
+  width: 30%;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+header .text-area {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid rgb(42, 42, 42);
+  background-color: rgb(21, 21, 21);
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+header textarea {
+  background-color: transparent;
+}
+header textarea:hover {
+  outline: none;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 0 8rem;
+}
+
+.box {
+  flex: 1;
+  padding: 2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid rgb(42, 42, 42);
+  background-color: rgb(21, 21, 21);
+}
+
+.box:hover {
+  border: 2px solid rgb(65, 65, 65);
+  background-color: rgb(28, 28, 28);
+}
+
+.box h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 70%;
+}
+
+.box h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+main {
+  display: flex;
+  background-color: #c77dff;
+  color: black;
+  padding: 4rem 8rem;
+  gap: 4rem;
+}
+
+.interact {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.interact button {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 7px;
+  border: none;
+  background-color: #e0aaff;
+  color: white;
+  font-size: 1rem;
+}
+
+button.is-active {
+  background-color: #240046;
+  color: white;
+}
+
+.detail {
+  background-color: black;
+  color: white;
+  flex: 1;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.detail h1 {
+  font-size: 1.3rem;
+}
+
+.detail .info {
+  margin-top: 2rem;
+}
+
+table td {
+  padding: 0.5rem 1rem;
+}
