@@ -125,11 +125,19 @@ table {
 
 /* above styles for removing dafault browser styles  */
 
+:root {
+  --primary: black;
+  --priamry-content: rgb(228, 228, 228);
+  --neutral: rgb(21, 21, 21);
+  --neutral-focus: rgb(28, 28, 28);
+  --border-color: rgb(37, 37, 37);
+}
+
 body {
   /* font-family: "Roboto", sans-serif; */
   font-family: "Poppins", sans-serif;
-  background-color: black;
-  color: rgb(228, 228, 228);
+  background-color: var(--primary);
+  color: var(--priamry-content);
   position: relative;
 }
 
@@ -150,16 +158,16 @@ main {
 /* nav styles */
 
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  max-height: min-content;
   display: flex;
   align-items: center;
   padding: 10px 30px;
-  border-bottom: 2px solid rgb(37, 37, 37);
+  border-bottom: 2px solid var(--border-color);
   justify-content: space-between;
+  /* primary but opacity */
   background-color: rgba(0, 0, 0, 0.594);
   backdrop-filter: blur(10px);
   z-index: 10;
@@ -183,18 +191,22 @@ nav {
 .navigation {
   display: flex;
   gap: 1.4rem;
-  color: rgb(169, 169, 169);
   font-weight: 500;
 }
 
-.navigation h3:hover {
-  color: white;
+.navigation h3 {
+  opacity: 0.7;
   cursor: pointer;
 }
+
+.navigation h3:hover {
+  opacity: 1;
+}
+
 .dropdown {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.2rem;
 }
 
 .right-content {
@@ -209,7 +221,12 @@ nav {
   gap: 0.5rem;
   padding: 8px 12px;
   border-radius: 4px;
-  background-color: rgb(21, 21, 21);
+  background-color: var(--neutral);
+  transition: all 0.2s ease-in-out;
+}
+
+.search:hover {
+  background-color: var(--neutral-focus);
 }
 
 input[type="text"],
@@ -217,7 +234,6 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
   border: none;
   box-shadow: none;
   color: inherit;
@@ -237,8 +253,12 @@ textarea {
 
 .ham-icon {
   padding: 8px;
-  background-color: rgb(21, 21, 21);
+  background-color: var(--neutral);
   border-radius: 4px;
+}
+
+.ham-icon:hover {
+  background-color: var(--neutral-focus);
 }
 
 @media (max-width: 1240px) {
@@ -263,8 +283,7 @@ textarea {
 .connect {
   align-self: center;
   position: absolute;
-  height: 100vh;
-  top: 12rem;
+  height: 100%;
   right: 0;
   z-index: 5;
 }
@@ -273,7 +292,7 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: 6rem;
+  margin-top: 7rem;
   position: sticky;
   top: 6rem;
 }
@@ -317,26 +336,27 @@ header .image {
 
 header .text-area {
   flex: 1;
-  padding: 8px 12px;
   border-radius: 8px;
-  border: 2px solid rgb(42, 42, 42);
-  background-color: rgb(21, 21, 21);
+  border: 2px solid var(--border-color);
+  background-color: var(--neutral);
 }
 
 textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 8px 12px;
   width: 100%;
   height: 100%;
   resize: none;
   font-size: 1rem;
   line-height: 1.5rem;
-  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
 
 textarea:focus {
   outline: none;
+  background-color: var(--neutral-focus);
 }
 
 header textarea {
@@ -363,6 +383,15 @@ header textarea:hover {
   }
 }
 
+@media (max-width:768px) {
+  header {
+    padding: 0 1rem;
+  }
+  header .text-area {
+    aspect-ratio: 3/2;
+  }
+}
+
 /* stats container css */
 
 .container {
@@ -378,14 +407,14 @@ header textarea:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 2px solid rgb(42, 42, 42);
-  background-color: rgb(21, 21, 21);
+  border: 2px solid var(--border-color);
+  background-color: var(--neutral);
   transition: all 0.2s ease-in-out;
   text-align: center;
 }
 
 .box:hover {
-  background-color: rgb(28, 28, 28);
+  background-color: var(--neutral-focus);
 }
 
 .box.pass:hover {
@@ -425,7 +454,8 @@ header textarea:hover {
 }
 @media (max-width: 768px) {
   .container {
-    padding: 0 2rem;
+    padding: 0 1rem;
+    gap:1rem;
   }
 }
 
@@ -434,7 +464,7 @@ header textarea:hover {
 main {
   display: flex;
   background: linear-gradient(#9d4edd, #d699ff);
-  color: black;
+  color: var(--primary);
   padding: 4rem 8rem;
   gap: 4rem;
 }
@@ -517,7 +547,7 @@ table td {
     padding: 1rem;
   }
   .detail .info {
-    overflow-x:hidden;
+    overflow-x: hidden;
   }
 }
 
