@@ -404,8 +404,9 @@ header textarea:hover {
     flex-direction: column;
     align-items: center;
   }
+  
   header .image {
-    width: 80%;
+    width: 50%;
   }
 
   header .text-area {
@@ -418,6 +419,11 @@ header textarea:hover {
   header {
     padding: 0 1rem;
   }
+  
+  header .image {
+    width: 80%;
+  }
+  
   header .text-area {
     aspect-ratio: 3/2;
   }
