@@ -307,12 +307,23 @@ textarea {
 
 .logos .whatsapp {
   background-color: #25d366;
+  transition: all 0.4s ease-in-out;
 }
 .logos .discord {
   background-color: #7289d9;
 }
 .logos .reddit {
   background-color: #ff5700;
+}
+
+.logos .whatsapp:hover {
+  box-shadow: -5px 10px 50px #25d366;
+}
+.logos .discord:hover {
+  box-shadow: -5px 10px 50px #7289d9;
+}
+.logos .reddit:hover {
+  box-shadow: -5px 10px 50px #ff5700;
 }
 
 /* header css */
@@ -383,7 +394,7 @@ header textarea:hover {
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   header {
     padding: 0 1rem;
   }
@@ -455,7 +466,7 @@ header textarea:hover {
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
-    gap:1rem;
+    gap: 1rem;
   }
 }
 
