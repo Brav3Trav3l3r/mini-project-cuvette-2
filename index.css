@@ -125,7 +125,6 @@ table {
 
 /* above styles for removing dafault browser styles  */
 
-
 body::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -135,7 +134,15 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #FFA3FD;
+  background-color: #ffa3fd;
+}
+
+::-moz-selection {
+  background: magenta;
+}
+
+::selection {
+  background: magenta;
 }
 
 :root {
